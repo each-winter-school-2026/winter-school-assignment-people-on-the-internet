@@ -45,10 +45,12 @@ def select(moduleIdentifier,selectedSettings,moduleData):
             # Does not perform any real processing; for demonstration only.
             proteins = exampleModule(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-        case "Camilo":
-            proteins = Camilo(moduleIdentifier,selectedSettings,moduleData)
+        case "emirkuş":
+            proteins = emirkuş(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-
+        case _: # Add new modules above 
+            # Do not add modules below
+            raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")   
 
 def fasta_input(moduleIdentifier, selectedSettings,moduleData):
     """
@@ -253,8 +255,8 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
 
 from utils.helperFunctions import extractSetting
 
-def Jani(moduleIdentifier, selectedSettings, moduleData):
-    chosenCutoff = extractSetting(settingName="Single choice field",
+def emirkuş(moduleIdentifier, selectedSettings, moduleData):
+    chosenCutoff = extractSetting(settingName="Deplete proteins above/below cutoff",
                                   moduleIdentifier=moduleIdentifier,
                                   selectedSettings=selectedSettings,
                                   moduleData=moduleData)
@@ -275,5 +277,3 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
                 protein.set_abundance(0.0)
     
     return Protein.getAllProteins()
-
-def Calimo( )
