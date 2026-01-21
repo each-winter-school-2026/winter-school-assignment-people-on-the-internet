@@ -6,14 +6,14 @@
 "icon": "icons/modules/pHmeter.svg",
 "settings": {
 
-      "Single choice field": {
+      "Deplete proteins above or below cutoff": {
         "formtype": "ChoiceField",
         "options": {"Deplete proteins below cutoff": ["depleteBelow"],
                     "Deplete proteins above cutoff": ["depleteAbove"]
                     }
                 },
     
-   "Decimal field": {
+   "Molecular Weight Cutoff (kDa)": {
         "formtype": "DecimalField",
         "default": 75.0,
         "min": 0.0,
