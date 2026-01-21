@@ -1,9 +1,9 @@
 {
 "IEF_People": { 
 "id": "IEF_People",
-"title": "IEF_People",
-"subtitle": "Module subtitle goes here",
-"icon": "icons/modules/placeholder.svg",
+"title": "Isoelectric Focussing - #2",
+"subtitle": "A second version of the isoelectric focusing module",
+"icon": "icons/modules/pHmeter.svg",
 "settings": {
 
     "A field where the user can choose from multiple options": {
