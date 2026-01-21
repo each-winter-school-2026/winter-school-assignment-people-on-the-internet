@@ -156,7 +156,6 @@ def signal_peptide_removal(moduleIdentifier, selectedSettings,moduleData):
     Protein.signalPeptideCleavage()
     return Protein.getAllProteins()
 
-
 def isoelectric_focussing(moduleIdentifier, selectedSettings,moduleData):
     """
     Fractionate proteins by isoelectric point, keeping those inside or outside a specified pI range.
