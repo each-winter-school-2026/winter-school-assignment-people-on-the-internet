@@ -58,7 +58,7 @@ def select(moduleIdentifier,selectedSettings,moduleData):
     
 def IEF_People(moduleIdentifier,selectedSettings,moduleData):
     singleChoiceFieldOption = extractSetting("Single choice field",moduleIdentifier,selectedSettings,moduleData)
-    decimalFieldValue = extractSetting("Decimal field",moduleIdentifier,selectedSettings,moduleData)
+    decimalFieldValue = extractSetting("Decimalfield",moduleIdentifier,selectedSettings,moduleData)
     
     print(f"Single choice field selected option: {singleChoiceFieldOption}")
     print(f"Decimal field value: {decimalFieldValue}")    
