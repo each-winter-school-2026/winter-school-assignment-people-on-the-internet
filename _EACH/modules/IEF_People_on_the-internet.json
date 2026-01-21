@@ -11,13 +11,13 @@
                     "Keep proteins outside range": "outside"}
     },
 
-    "Minimum pI": {
+    "Minimum pI (Min 0.0)": {
         "formtype": "DecimalField",
         "default": 4.0,
         "min": 0.0,
         "max": 14.0,
         "step": 0.1},
-    "Maximum pI": {
+    "Maximum pI (Max 14.0)": {
         "formtype": "DecimalField",
         "default": 7.0,
         "min": 0.0,
