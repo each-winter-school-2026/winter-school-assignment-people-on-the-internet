@@ -2,23 +2,25 @@
 "IEF_People": { 
 "id": "IEF_People",
 "title": "Isoelectric Focussing Ben",
-"subtitle": "A second version of the isoelectric focusing module",
+"subtitle": "Deplete proteins within a certain isoelectric point range",
 "icon": "icons/modules/pHmeter.svg",
 "settings": {
-
-    "A field where the user can choose from multiple options": {
+    "Keep inside/outside isoelectric point range": {
         "formtype": "ChoiceField",
-        "options": {"Option 1": ["Internal_code_for_option_1"],
-                    "Option 2": ["Internal_code_for_option_2"],
-                    "Option 3":["Internal_code_for_option_3"]
-                    }
-                },
-    
-    "A field where the user can enter their own number": {
+        "options": {"Keep proteins inside range": "inside",
+                    "Keep proteins outside range": "outside"}
+        },
+    "Minimum pI": {
         "formtype": "DecimalField",
-        "default": 99.0,
+        "default": 4.0,
         "min": 0.0,
-        "max": 100.0,
+        "max": 14.0,
+        "step": 0.1},
+    "Maximum pI": {
+        "formtype": "DecimalField",
+        "default": 7.0,
+        "min": 0.0,
+        "max": 14.0,
         "step": 0.1}
 
         }
