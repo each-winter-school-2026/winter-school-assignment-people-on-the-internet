@@ -14,7 +14,7 @@
                     }
                 },
     
-    "Decimal field": {
+    "A field where the user can enter their own number": {
         "formtype": "DecimalField",
         "default": 99.0,
         "min": 0.0,
