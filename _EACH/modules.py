@@ -265,6 +265,18 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
                                 selectedSettings=selectedSettings,
                                 moduleData=moduleData)
     
+  from utils.helperFunctions import extractSetting
+
+def Jani(moduleIdentifier, selectedSettings, moduleData):
+    chosenCutoff = extractSetting(settingName= "Molecular Weight Cutoff (kDa)",
+                                  moduleIdentifier=moduleIdentifier,
+                                  selectedSettings=selectedSettings,
+                                  moduleData=moduleData)
+    depleteAboveOrBelow = extractSetting(settingName= "Deplete proteins above or below cutoff",
+                                moduleIdentifier=moduleIdentifier,
+                                selectedSettings=selectedSettings,
+                                moduleData=moduleData)
+    
     for protein in Protein.getAllProteins():
         # Check the user's choice
         if depleteAboveOrBelow == ["depleteBelow"]:
