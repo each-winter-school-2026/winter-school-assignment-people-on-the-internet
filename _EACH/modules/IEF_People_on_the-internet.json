@@ -1,7 +1,7 @@
 {
-"unique_module_identifier": {IEF_People} 
-"id": IEF_People,
-"title": IEF_People,
+"IEF_People": { 
+"id": "IEF_People",
+"title": "IEF_People",
 "subtitle": "Module subtitle goes here",
 "icon": "icons/modules/placeholder.svg",
 "settings": {
