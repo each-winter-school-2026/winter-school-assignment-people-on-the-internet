@@ -288,7 +288,7 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
 from utils.helperFunctions import extractSetting
 
 def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
-    fraction = extractSetting(settingName="Number of Fractions",
+    fraction = extractSetting(settingName="Kept Fraction",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
@@ -301,26 +301,8 @@ def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
     
-    pI_min = 3+(fraction)*((10-3)/total_no_of_fractions)
-    pI_max = 3+(fraction-1)*((10-3)/total_no_of_fractions)
+    pI_min = 3+(fraction)*((10-3)/no_of_fractions)
+    pI_max = 3+(fraction-1)*((10-3)/no_of_fractions)
 
-    for protein in Protein.getAllProteins():
-        if maxPI is None:
-            maxPI = float('inf')
-        if minPI is None:
-            minPI = -float('inf')
-        if keepInsideOutsideSelection == "outside":    
-            for protein in Protein.childClasses.values():
-                if minPI <= protein.isoelectric_point <= maxPI:
-                    protein.abundance = 0.0
-                    protein.modifications.append(f"Removed due to pI outside range {minPI}-{maxPI}")
-        elif keepInsideOutsideSelection == "inside":
-            for protein in Protein.childClasses.values():
-                if protein.isoelectric_point < minPI:
-                    protein.abundance = 0.0
-                    protein.modifications.append(f"Removed due to pI < {minPI}")
-                if protein.isoelectric_point > maxPI:
-                    protein.abundance = 0.0
-                    protein.modifications.append(f"Removed due to pI > {maxPI}")
-    
+    Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=in_or_out_range,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
