@@ -1,7 +1,7 @@
 {
 "my_model_exampe": {
 "id": "my_model_exampe",
-"title": "My model example",
+"title": "my_model_exampe",
 "subtitle": "An example module for demonstration purposes",
 "icon": "icons/modules/placeholder.svg",
 "settings": {
