@@ -254,18 +254,7 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
     
     return Protein.getAllProteins()
 
-    from utils.helperFunctions import extractSetting
-def Jani(moduleIdentifier, selectedSettings, moduleData):
-    chosenCutoff = extractSetting(settingName="Molecular Weight Cutoff (kDa)",
-                                  moduleIdentifier=moduleIdentifier,
-                                  selectedSettings=selectedSettings,
-                                  moduleData=moduleData)
-    depleteAboveOrBelow = extractSetting(settingName="Deplete proteins above or below cutoff",
-                                moduleIdentifier=moduleIdentifier,
-                                selectedSettings=selectedSettings,
-                                moduleData=moduleData)
-    
-  from utils.helperFunctions import extractSetting
+from utils.helperFunctions import extractSetting
 
 def Jani(moduleIdentifier, selectedSettings, moduleData):
     chosenCutoff = extractSetting(settingName= "Molecular Weight Cutoff (kDa)",
