@@ -1,0 +1,3 @@
+This module uses isoelectric focusing to deplete proteins within a certain isoelectric point range. 
+In the application, the user is asked to set two parameters: Selection of proper equipment and whether to keep proteins within or outside of the pI range of that very equipment. 
+Based on that, the module is programmed to automatically set the pI range of the chosen kit. It will further compute whether proteins are depleted or not, i.e., if their isoelectric points are within the set pI range or not.
