@@ -48,6 +48,9 @@ def select(moduleIdentifier,selectedSettings,moduleData):
         case "Jani":
             proteins = Jani(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
+        case "isoelectric_focusing":
+            proteins = isoelectric_focusing(moduleIdentifier,selectedSettings,moduleData)
+            return virtualSDSPage_2DGaussian(proteins)
         case _: # Add new modules above 
             # Do not add modules below
             raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")
@@ -172,6 +175,7 @@ def isoelectric_focussing(moduleIdentifier, selectedSettings,moduleData):
     keepInsideOutside = extractSetting("Keep inside/outside isoelectric point range",moduleIdentifier,selectedSettings,moduleData)
     pI_min = extractSetting("Minimum pI",moduleIdentifier,selectedSettings,moduleData)
     pI_max = extractSetting("Maximum pI",moduleIdentifier,selectedSettings,moduleData)
+  
     Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=keepInsideOutside,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
     
@@ -254,6 +258,7 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
     
     return Protein.getAllProteins()
 
+
 from utils.helperFunctions import extractSetting
 
 def Jani(moduleIdentifier, selectedSettings, moduleData):
@@ -277,4 +282,23 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
             if protein.weight > chosenCutoff:
                 protein.set_abundance(0.0)
     
+    return Protein.getAllProteins()
+
+
+from utils.helperFunctions import extractSetting
+
+def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
+    No_of_fractions = extractSetting(setting name="Number of Fractions",
+                                     moduleIdentifier=moduleIdentifier,
+                                     selectedSettings=selectedSettings,
+                                     moduleData=moduleData)
+    in_or_out_range = extractSetting(setting name="Keep inside/outside isoelectric point range",
+                                     moduleIdentifier=moduleIdentifier,
+                                     selectedSettings=selectedSettings,
+                                     moduleData=moduleData)
+    
+    pI_min = No_of_fractions/1.5
+    pI_max = No_of_fractions*2.2
+
+    Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=in_or_out_range,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
