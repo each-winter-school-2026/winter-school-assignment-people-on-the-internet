@@ -288,17 +288,39 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
 from utils.helperFunctions import extractSetting
 
 def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
-    No_of_fractions = extractSetting(setting name="Number of Fractions",
+    fraction = extractSetting(settingName="Number of Fractions",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
-    in_or_out_range = extractSetting(setting name="Keep inside/outside isoelectric point range",
+    no_of_fractions = extractSetting(settingName="Maximum number of Fractions",
+                                     moduleIdentifier=moduleIdentifier,
+                                     selectedSettings=selectedSettings,
+                                     moduleData=moduleData)
+    in_or_out_range = extractSetting(settingName="Keep inside/outside isoelectric point range",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
     
-    pI_min = No_of_fractions/1.5
-    pI_max = No_of_fractions*2.2
+    pI_min = 3+(fraction)*((10-3)/total_no_of_fractions)
+    pI_max = 3+(fraction-1)*((10-3)/total_no_of_fractions)
 
-    Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=in_or_out_range,minPI=pI_min,maxPI=pI_max)
+    for protein in Protein.getAllProteins():
+        if maxPI is None:
+            maxPI = float('inf')
+        if minPI is None:
+            minPI = -float('inf')
+        if keepInsideOutsideSelection == "outside":    
+            for protein in Protein.childClasses.values():
+                if minPI <= protein.isoelectric_point <= maxPI:
+                    protein.abundance = 0.0
+                    protein.modifications.append(f"Removed due to pI outside range {minPI}-{maxPI}")
+        elif keepInsideOutsideSelection == "inside":
+            for protein in Protein.childClasses.values():
+                if protein.isoelectric_point < minPI:
+                    protein.abundance = 0.0
+                    protein.modifications.append(f"Removed due to pI < {minPI}")
+                if protein.isoelectric_point > maxPI:
+                    protein.abundance = 0.0
+                    protein.modifications.append(f"Removed due to pI > {maxPI}")
+    
     return Protein.getAllProteins()
