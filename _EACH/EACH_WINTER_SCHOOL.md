@@ -49,6 +49,10 @@ app/manage.py
 
 
 
+
+
+
+
 # EACH Winter School 2026 exercise
 ## Setting up
 
