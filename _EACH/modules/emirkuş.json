@@ -3,7 +3,7 @@
 "id": "emirkuş.json",
 "title": "Emirkuş Module",
 "subtitle": "Best module in the entire world",
-"icon": "icons/modules/placeholder.svg",
+"icon": "icons/modules/masumm.svg",
 "settings": {
 
     "Single choice field": {
@@ -27,24 +27,13 @@
     
     "Decimal field": {
         "formtype": "DecimalField",
-        "default": 99.0,
+        "default": 99.00,
         "min": 0.0,
-        "max": 100.0,
-        "step": 0.01},
+        "max": 100.00,
+        "step": 0.01}
 
 
-    "Boolean field": {
-        "formtype": "BooleanField",
-        "default": false
-            },
-
-            
-    "Character field": {
-        "formtype": "CharField",
-        "default": "Here the user can type anything they want",
-        "min_length": 5,  
-        "max_length": 100
-            }
+    
 
 
 
