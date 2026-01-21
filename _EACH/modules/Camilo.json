@@ -8,7 +8,8 @@
 
     "A field where the user can choose from multiple options": {
         "formtype": "ChoiceField",
-        "options": {"Option 1": ["Internal_code_for_option_1"],
+        "options": {"Option 1": ["escucha las palabras de las brujas, los secretos escondidos en la noche, los antiguos dioses invocamos ahora la obra de la magia oculta
+    "],
                     "Option 2": ["Internal_code_for_option_2"],
                     "Option 3":["Internal_code_for_option_3"]
                     }
