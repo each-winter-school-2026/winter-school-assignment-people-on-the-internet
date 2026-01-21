@@ -251,4 +251,3 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
     
     return Protein.getAllProteins()
 
-
