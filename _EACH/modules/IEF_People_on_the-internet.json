@@ -7,16 +7,11 @@
 "settings": {
     "Keep inside/outside isoelectric point range": {
         "formtype": "ChoiceField",
-        "options": {"Keep proteins inside range": "inside",
-                    "Keep proteins outside range": "outside"}
+        "options": {"Delete proteins below cutoff": ["Deplete below"],
+                    "Delete proteins above cutoff": ["Deplete above"],
         },
-    "Minimum pI": {
-        "formtype": "DecimalField",
-        "default": 4.0,
-        "min": 0.0,
-        "max": 14.0,
-        "step": 0.1},
-    "Maximum pI": {
+
+    "Decimal setting": {
         "formtype": "DecimalField",
         "default": 7.0,
         "min": 0.0,
