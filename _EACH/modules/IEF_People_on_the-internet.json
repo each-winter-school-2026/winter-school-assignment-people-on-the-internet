@@ -9,7 +9,8 @@
         "formtype": "ChoiceField",
         "options": {"Delete proteins below cutoff": ["Deplete below"],
                     "Delete proteins above cutoff": ["Deplete above"]
-        },
+        }
+    },
 
     "Decimal setting": {
         "formtype": "DecimalField",
