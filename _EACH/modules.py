@@ -45,13 +45,10 @@ def select(moduleIdentifier,selectedSettings,moduleData):
             # Does not perform any real processing; for demonstration only.
             proteins = exampleModule(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-        case "Jani":
-            proteins = Jani(moduleIdentifier,selectedSettings,moduleData)
-            return virtualSDSPage_2DGaussian(proteins)
         case _: # Add new modules above 
             # Do not add modules below
             raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")
-
+        
 
 def fasta_input(moduleIdentifier, selectedSettings,moduleData):
     """
