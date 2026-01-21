@@ -257,11 +257,11 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
 from utils.helperFunctions import extractSetting
 
 def Jani(moduleIdentifier, selectedSettings, moduleData):
-    chosenCutoff = extractSetting(settingName="Molecular Weight Cutoff (kDa)",
+    chosenCutoff = extractSetting(settingName="Single choice field",
                                   moduleIdentifier=moduleIdentifier,
                                   selectedSettings=selectedSettings,
                                   moduleData=moduleData)
-    depleteAboveOrBelow = extractSetting(settingName="Deplete proteins above or below cutoff",
+    depleteAboveOrBelow = extractSetting(settingName="Decimal field",
                                 moduleIdentifier=moduleIdentifier,
                                 selectedSettings=selectedSettings,
                                 moduleData=moduleData)
