@@ -8,7 +8,7 @@
     "Keep inside/outside isoelectric point range": {
         "formtype": "ChoiceField",
         "options": {"Delete proteins below cutoff": ["Deplete below"],
-                    "Delete proteins above cutoff": ["Deplete above"],
+                    "Delete proteins above cutoff": ["Deplete above"]
         },
 
     "Decimal setting": {
@@ -20,4 +20,4 @@
 
         }
     }
-}
+},
