@@ -63,8 +63,11 @@ def IEF_People(moduleIdentifier,selectedSettings,moduleData):
     print(f"Single choice field selected option: {singleChoiceFieldOption}")
     print(f"Decimal field value: {decimalFieldValue}")    
     
+    keepInsideOutside = extractSetting("Keep inside/outside isoelectric point range",moduleIdentifier,selectedSettings,moduleData)
+    pI_min = extractSetting("Minimum pI",moduleIdentifier,selectedSettings,moduleData)
+    pI_max = extractSetting("Maximum pI",moduleIdentifier,selectedSettings,moduleData)
+    Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=keepInsideOutside,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
->>>>>>> b6767a3 (update)
         
 
 
