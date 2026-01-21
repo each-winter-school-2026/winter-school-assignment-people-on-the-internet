@@ -8,7 +8,7 @@
 
     "A field where the user can choose from multiple options": {
         "formtype": "ChoiceField",
-        "options": {"Delete proteins below cuoff": ["Depletebelow"],
+        "options": {"Delete proteins below cutoff": ["Depletebelow"],
                     "Delete proteins above cutoff": ["Depleteabove"]
                     }
                 },
