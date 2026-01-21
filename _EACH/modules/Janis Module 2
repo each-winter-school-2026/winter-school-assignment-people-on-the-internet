@@ -1,0 +1,27 @@
+{
+"Janis Module": {
+"id": "Janis Module",
+"title": "Janis Module",
+"subtitle": "OG Module",
+"icon": "icons/modules/pHmeter.svg",
+"settings": {
+
+      "Single choice field": {
+        "formtype": "ChoiceField",
+        "options": {"Deplete proteins below cutoff": ["depleteBelow"],
+                    "Deplete proteins above cutoff": ["depleteAbove"]
+                    }
+                },
+    
+   "Decimal field": {
+        "formtype": "DecimalField",
+        "default": 75.0,
+        "min": 0.0,
+        "max": 300.0,
+        "step": 0.1}
+
+
+
+        }
+    }
+}
