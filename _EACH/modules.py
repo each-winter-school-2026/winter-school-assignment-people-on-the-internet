@@ -45,10 +45,10 @@ def select(moduleIdentifier,selectedSettings,moduleData):
             # Does not perform any real processing; for demonstration only.
             proteins = exampleModule(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-        case _: # Add new modules above 
-            # Do not add modules below
-            raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")
-        
+        case "Camilo":
+            proteins = Camilo(moduleIdentifier,selectedSettings,moduleData)
+            return virtualSDSPage_2DGaussian(proteins)
+
 
 def fasta_input(moduleIdentifier, selectedSettings,moduleData):
     """
@@ -275,3 +275,5 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
                 protein.set_abundance(0.0)
     
     return Protein.getAllProteins()
+
+def Calimo( )
