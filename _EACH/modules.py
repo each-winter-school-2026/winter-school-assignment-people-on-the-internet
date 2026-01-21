@@ -299,9 +299,14 @@ def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
-    
-    pI_min = 3+(fraction)*((10-3)/no_of_fractions)
-    pI_max = 3+(fraction-1)*((10-3)/no_of_fractions)
+
+    if fraction > no_of_fractions:
+        fraction = no_of_fractions
+    if fraction < 0:
+        fraction = 1
+
+    pI_max = 3+((fraction)*((10-3)/no_of_fractions))
+    pI_min = 3+((fraction-1)*((10-3)/no_of_fractions))
 
     Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=in_or_out_range,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
