@@ -1,0 +1,21 @@
+{
+"isoelectric_focusing": {
+"id": "isoelectric_focusing",
+"title": "Isoelectric Focusing",
+"subtitle": "Deplete proteins within a certain isoelectric point range",
+"icon": "icons/modules/pHmeter.svg",
+"settings": {
+    "Used equipment": {
+        "formtype": "ChoiceField",
+        "options":  {"Equipment A": ["EA",2.00,4.00],
+                     "Equipment B": ["EB",3.00,4.00],
+                     "Equipment C": ["EC",5.00,6.00]}
+        },
+    "Keep inside/outside isoelectric point range": {
+        "formtype": "ChoiceField",
+        "options": {"Keep proteins inside range": "inside",
+                    "Keep proteins outside range": "outside"}
+        }
+    }
+}
+}
