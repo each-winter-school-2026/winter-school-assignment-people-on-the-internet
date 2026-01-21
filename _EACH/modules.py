@@ -45,12 +45,10 @@ def select(moduleIdentifier,selectedSettings,moduleData):
             # Does not perform any real processing; for demonstration only.
             proteins = exampleModule(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-        case "emirkuş":
-            proteins = emirkuş(moduleIdentifier,selectedSettings,moduleData)
-            return virtualSDSPage_2DGaussian(proteins)
         case _: # Add new modules above 
             # Do not add modules below
-            raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")   
+            raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")
+        
 
 def fasta_input(moduleIdentifier, selectedSettings,moduleData):
     """
@@ -253,27 +251,4 @@ def exampleModule(moduleIdentifier,selectedSettings,moduleData):
     
     return Protein.getAllProteins()
 
-from utils.helperFunctions import extractSetting
 
-def emirkuş(moduleIdentifier, selectedSettings, moduleData):
-    chosenCutoff = extractSetting(settingName="Deplete proteins above/below cutoff",
-                                  moduleIdentifier=moduleIdentifier,
-                                  selectedSettings=selectedSettings,
-                                  moduleData=moduleData)
-    depleteAboveOrBelow = extractSetting(settingName="Decimal field",
-                                moduleIdentifier=moduleIdentifier,
-                                selectedSettings=selectedSettings,
-                                moduleData=moduleData)
-    
-    for protein in Protein.getAllProteins():
-        # Check the user's choice
-        if depleteAboveOrBelow == "depleteBelow":
-            # Remove proteins lighter than the cutoff
-            if protein.weight < chosenCutoff:
-                protein.set_abundance(0.0)
-        elif depleteAboveOrBelow == "depleteAbove":
-            # Remove proteins heavier than the cutoff
-            if protein.weight > chosenCutoff:
-                protein.set_abundance(0.0)
-    
-    return Protein.getAllProteins()
