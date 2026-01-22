@@ -12,17 +12,17 @@
         "max": 24.0,
         "step": 1.0
         },
-    "Kept Fraction": {
+    "Targeted Fraction": {
         "formtype": "DecimalField",
         "default": 6.0,
         "min": 0.0,
         "max": 24.0,
         "step": 1.0
         },
-    "Keep inside/outside isoelectric point range": {
+    "Keep inside/outside Fraction": {
         "formtype": "ChoiceField",
-        "options": {"Keep proteins inside range": "inside",
-                    "Keep proteins outside range": "outside"}
+        "options": {"Keep proteins inside fraction": "inside",
+                    "Keep proteins outside fraction": "outside"}
         }
     }
 }

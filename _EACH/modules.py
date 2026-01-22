@@ -287,7 +287,7 @@ def Jani(moduleIdentifier, selectedSettings, moduleData):
 from utils.helperFunctions import extractSetting
 
 def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
-    fraction = extractSetting(settingName="Kept Fraction",
+    fraction = extractSetting(settingName="Targeted Fraction",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
@@ -295,7 +295,7 @@ def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
-    in_or_out_range = extractSetting(settingName="Keep inside/outside isoelectric point range",
+    in_or_out_range = extractSetting(settingName="Keep inside/outside Fraction",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
