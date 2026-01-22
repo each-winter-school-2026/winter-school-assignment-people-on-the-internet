@@ -5,16 +5,16 @@
 "subtitle": "Deplete proteins within a certain isoelectric point range",
 "icon": "icons/modules/pHmeter.svg",
 "settings": {
-    "Kept Fraction": {
+    "Maximum number of Fractions": {
         "formtype": "DecimalField",
-        "default": 6.0,
+        "default": 12.0,
         "min": 0.0,
         "max": 24.0,
         "step": 1.0
         },
-    "Maximum number of Fractions": {
+    "Kept Fraction": {
         "formtype": "DecimalField",
-        "default": 12.0,
+        "default": 6.0,
         "min": 0.0,
         "max": 24.0,
         "step": 1.0
