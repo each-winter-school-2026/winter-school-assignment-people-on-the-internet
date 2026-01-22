@@ -5,7 +5,7 @@
 "subtitle": "Deplete proteins within a certain isoelectric point range",
 "icon": "icons/modules/pHmeter.svg",
 "settings": {
-    "Maximum number of Fractions": {
+    "Maximum Number of Fractions": {
         "formtype": "DecimalField",
         "default": 12.0,
         "min": 0.0,
@@ -21,8 +21,8 @@
         },
     "Keep inside/outside Fraction": {
         "formtype": "ChoiceField",
-        "options": {"Keep proteins inside fraction": "inside",
-                    "Keep proteins outside fraction": "outside"}
+        "options": {"Keep Proteins inside Fraction": "inside",
+                    "Keep Proteins outside Fraction": "outside"}
         }
     }
 }

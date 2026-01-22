@@ -291,7 +291,7 @@ def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
-    no_of_fractions = extractSetting(settingName="Maximum number of Fractions",
+    no_of_fractions = extractSetting(settingName="Maximum Number of Fractions",
                                      moduleIdentifier=moduleIdentifier,
                                      selectedSettings=selectedSettings,
                                      moduleData=moduleData)
