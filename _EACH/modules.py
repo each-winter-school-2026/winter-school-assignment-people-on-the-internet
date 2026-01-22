@@ -45,34 +45,16 @@ def select(moduleIdentifier,selectedSettings,moduleData):
             # Does not perform any real processing; for demonstration only.
             proteins = exampleModule(moduleIdentifier,selectedSettings,moduleData)
             return virtualSDSPage_2DGaussian(proteins)
-
+        case "Jani":
+            proteins = Jani(moduleIdentifier,selectedSettings,moduleData)
+            return virtualSDSPage_2DGaussian(proteins)
+        case "isoelectric_focusing":
+            proteins = isoelectric_focusing(moduleIdentifier,selectedSettings,moduleData)
+            return virtualSDSPage_2DGaussian(proteins)
+        case _: # Add new modules above 
+            # Do not add modules below
+            raise NotImplementedError(f"Module: {moduleIdentifier} is not implemented yet.")
         
-    return Protein.getAllProteins()
-    
-def IEF_People(moduleIdentifier,selectedSettings,moduleData):
-    singleChoiceFieldOption = extractSetting("Single choice field",moduleIdentifier,selectedSettings,moduleData)
-    decimalFieldValue = extractSetting("Decimalfield",moduleIdentifier,selectedSettings,moduleData)
-    
-    print(f"Single choice field selected option: {singleChoiceFieldOption}")
-    print(f"Decimal field value: {decimalFieldValue}")    
-    
-    keepInsideOutside = extractSetting("Keep inside/outside isoelectric point range",moduleIdentifier,selectedSettings,moduleData)
-    pI_min = extractSetting("Minimum pI",moduleIdentifier,selectedSettings,moduleData)
-    pI_max = extractSetting("Maximum pI",moduleIdentifier,selectedSettings,moduleData)
-    Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=keepInsideOutside,minPI=pI_min,maxPI=pI_max)
-    return Protein.getAllProteins()
-        
-
-
-
-
-
-
-
-
-
-
-
 
 def fasta_input(moduleIdentifier, selectedSettings,moduleData):
     """
@@ -182,7 +164,7 @@ def isoelectric_focussing(moduleIdentifier, selectedSettings,moduleData):
     - "Keep inside/outside isoelectric point range" (ChoiceField): maps to "inside" or "outside" behavior.
     - "Minimum pI" (DecimalField): lower bound of pI window.
     - "Maximum pI" (DecimalField): upper bound of pI window.
-  
+
     :param moduleIdentifier: Identifier for the current module.
     :param selectedSettings: Dict with min/max pI values and the keep-inside/outside selection.
     :param moduleData: Module definitions resolving the keep-inside/outside option mapping.
@@ -328,4 +310,3 @@ def isoelectric_focusing(moduleIdentifier, selectedSettings, moduleData):
 
     Protein.fractionateProteinsByIsoelectricPoint(keepInsideOutsideSelection=in_or_out_range,minPI=pI_min,maxPI=pI_max)
     return Protein.getAllProteins()
-
